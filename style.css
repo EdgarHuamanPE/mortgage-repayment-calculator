@@ -1,0 +1,483 @@
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url('assets/fonts/static/PlusJakartaSans-Medium.ttf') format('truetype'),
+         url('assets/fonts/static/PlusJakartaSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    /*Primary*/
+    --Lime: hsl(61, 70%, 52%);
+    --hoverlime:rgb(235,238,151);
+    --Red: hsl(4, 69%, 50%);
+
+    /*Neutral*/
+
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+    --Slate-1000: rgb(14, 36, 49);
+    --radio-color: rgb(250, 250, 224);
+    height: 100%;
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Plus Jakarta Sans",Arial, sans-serif;
+    min-height: 100%;
+    
+}
+
+.calculator{
+    width: 100%;    
+    background-color: var(--White);
+}
+
+.calculator__inputs{
+    
+    padding: 38px 25px 32px;
+    
+}
+
+.calculator__titulo{
+    font-size:2.4rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    color: var(--Slate-900);
+}
+
+.control__clean{
+    background-color: var(--White);
+    color: var(--Slate-700);
+    font-size: 1.6rem;
+    margin-top: 14px;
+    display: inline-block;
+}
+
+
+.input__container:not(.control__clean){
+    margin-top: 25px;
+}
+
+.input__element{
+    display: flex;
+   
+    position: relative;
+
+}
+
+.element__hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;    
+    border: 1px solid var(--Slate-500);
+    border-radius: 8px;
+}
+
+.element__hover:hover{
+    cursor: pointer;
+    border: 1px solid var(--Slate-900);
+}
+
+
+.icon__input{
+    background-color: var(--Slate-100);
+    text-align: center;
+    line-height: 48px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--Slate-700) ;
+    height: 48px;
+    letter-spacing: 1px;
+}
+
+.icon__input--Amount{
+    width: 44px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.icon__input--termino{
+    width: 80px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; 
+}
+
+.icon__input--interes{
+    width: 50px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; 
+}
+
+.label{
+    display: block;
+    color: var(--Slate-700);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.control{
+    
+    height: 48px;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 20px;
+    color:var(--Slate-900);
+    font-family: "Plus Jakarta Sans",Arial, sans-serif;
+}
+
+.control__amount{
+    width:  calc( 100% - 44px);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.control__termino{
+    width:  calc( 100% - 80px);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.control__interes{
+    width:  calc( 100% - 50px);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.box__radio{
+    height: 48px;
+    border: 1px solid var(--Slate-700);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    padding-left: 20px;
+    position: relative;
+    
+}
+
+.box__radio--opc{
+    margin-bottom:10px ;
+}
+
+.control__radiobutton{
+    width: 18px;
+    height: 18px;
+    -webkit-appearance: none;  /* Desactivar la apariencia por defecto */
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    border: 2px solid var(--Slate-900);
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.control__radiobutton:checked {
+    background-color: var(--Lime); /* Color cuando está seleccionado */
+    border-color:var(--Lime);
+}
+
+.control__radiobutton:checked::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--White);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.control__radiobutton:checked::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--Lime);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.control__radio--txt{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--Slate-900);
+    line-height: 18px;
+}
+
+
+.layer__radio{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.layer__radio:hover{
+    cursor: pointer;
+}
+
+
+
+.hover{
+    border: 1px solid var(--Lime);
+}
+
+.btn__submit{
+    width: 100%;
+    height: 54px;
+    background-color: var(--Lime);
+    border-radius: 50px;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: "Plus Jakarta Sans",Arial, sans-serif;
+    color: var(--Slate-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+    outline: none;
+}
+
+.img__calculator{
+    height: 20px;
+    width: 20px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: var(--hoverlime);
+}
+
+/* Result */
+
+
+.calculator-result{
+    background-color: var(--Slate-900);
+    padding: 36px 24px;
+    
+    
+}
+
+.result__img{
+    display: block;    
+    margin-left: auto;
+    margin-right: auto;
+    height: 176px;
+    
+    
+}
+
+.result__title{
+    color: var(--White);
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.4rem;
+    margin-top: 32px;
+}
+
+.result__description{
+    text-align: center;
+    color: var(--Slate-500);
+    margin-top: 20px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+
+.result__titulo{
+    color: var(--White);
+    font-size: 2.2rem;
+}
+
+.result__descripcion{
+    margin-top: 26px;
+    color: var(--Slate-300);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.result__amount{
+    margin-top: 30px;
+    background-color: var(--Lime);
+    border-radius: 8px;
+    padding: 25px 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.result__amount::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--Slate-1000);
+    border-radius: 4px;
+}
+
+.payment__title{
+    color: var(--Slate-300);
+    font-size: 1.6rem;
+    
+}
+
+.payment__title--month{
+    margin-bottom: 14px;
+    
+}
+
+.payment__title--total{
+    margin-bottom: 16px;
+    margin-top: 18px;
+}
+
+.payment__number--month{
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: var(--Lime);
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+    
+}
+
+.payment__number--total{
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--White);
+    letter-spacing: 2px;
+}
+
+.separador{
+    border: none;
+    box-shadow: 0 0 0 0.1px var(--Slate-100);
+    
+}
+
+@media screen and (min-width:375px){
+    body{
+        background-color: var(--Slate-100);
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .calculator{
+        width: 375px;
+    }
+}
+
+@media screen and (min-width:768px){
+     
+    body{
+        align-items: center;
+    }
+    .calculator{
+
+        width: 1000px;
+        height: 600px;
+        /* width: 1000px;
+        height: 600px; */
+        display: flex;
+        border-radius: 16px;
+
+    }
+
+    .calculator__titulos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .control__clean{
+        margin-top: 0;
+    }
+
+    .calculator__inputs{
+        width: 50%;
+        
+    }
+
+    .input__container{
+        margin-top: 30px;
+    }
+
+    .calculator-result{
+        width: 50%;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .result__title{
+        font-size: 2.6rem;
+    }
+    
+    .result__description{
+        font-size: 1.7rem;
+    }
+    
+    .inputs__oneline{
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+    }
+
+    .form__inputs >.input__container:first-child{
+        margin-top: 45px;
+    }
+
+    .result__descripcion{
+        font-size: 1.7rem;
+    }
+
+    .payment__number--month{
+        font-size: 4.5rem;
+    }
+
+    .result__amount{
+        margin-top: 4.6rem;
+        padding-top: 34px;
+    }
+
+    .payment__number--month{
+        margin-bottom: 42px;
+    }
+
+    .payment__title--total{
+        margin-top: 42px;
+    }
+   
+} 
+
+
