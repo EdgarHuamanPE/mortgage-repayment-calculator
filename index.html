@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="shortcut icon" href="./assets/images/favicon-48.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/favicon-64.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/favicon-128.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/favicon-256.png" type="image/x-icon">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="calculator">
+     <section class="calculator__inputs">
+          <div class="calculator__titulos">
+            <p class="calculator__titulo">Mortgage Calculator</p>
+            <a href="" class="input__container control__clean">Clear All</a>
+          </div>
+          <form action="" class="form__inputs">
+            <div class="input__container input__container--txt">
+              <label for="monto" class="label">Mortgage Amount</label>
+              <div class="input__element">
+                <div class="icon__input icon__input--Amount">£</div>
+                <div class="element__hover"></div>
+                <input type="text" name="monto" id="monto" value="" class="control control__amount">
+              </div>
+            </div>
+
+            <div class="inputs__oneline">
+              <div class="input__container input__container--txt">
+                <label for="termino" class="label">Mortgage Term</label>
+                <div class="input__element">
+                  <div class="element__hover"></div>
+                  <input type="text" name="termino" id="termino" value="" class="control control__termino">
+                  <div class="icon__input icon__input--termino">years</div>
+                </div>
+              </div>            
+              <div class="input__container input__container--txt">
+                <label for="interes" class="label">Interest Rate</label>
+                <div class="input__element">
+                  <div class="element__hover"></div>
+                  <input type="text" name="interes" id="interes" value="" class="control control__interes">
+                  <div class="icon__input icon__input--interes">%</div>
+                </div>
+              </div>            
+            </div>
+            
+            <div class="input__container input__container--radio">
+              <label for="mortage" class="label">Mortgage Type</label>
+                <div class="box__radio box__radio--opc">
+                  <input type="radio" name="mortage" id="repayment" value="Repayment" class="control__radiobutton" ><span class="control__radio--txt">Repayment</span>
+                  <div class="layer__radio"></div>
+                </div>              
+                <div class="box__radio">
+                  <input type="radio" name="mortage" id="interesonly" value="Interest Only" class="control__radiobutton"><span class="control__radio--txt">Interest Only</span>
+                  <div class="layer__radio"></div>
+                </div>
+            </div>
+            
+            <button type="submit" class="input__container btn__submit btn"><img class="img__calculator" src="./assets/images/icon-calculator.svg" alt="icono de ejecutar calculo">Calculate Repayments</button>
+          </form>
+     </section>
+     <section class="calculator-result">
+      <img src="./assets/images/illustration-empty.svg" alt="Imagen Resultado" class="result__img">
+      <h2 class="result__title">Result show here</h2>
+      <p class="result__description">
+        Complete the form and click  "calcultate repayment" to see what  your monthly repayment would be.
+      </p>
+        <!-- <p class="result__titulo">Your results</p>
+        <p class="result__descripcion"> Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.</p>
+        <section class="result__amount">
+              <p class="payment__title payment__title--month"> Your monthly repayments</p>
+              <p class="payment__number payment__number--month">£1,797.74</p>
+              <hr class="separador">
+              <p class="payment__title payment__title--total">  Total you'll repay over the term</p>
+              <p class="payment__number payment__number--total">£539,322.94</p>
+        </section> -->
+     </section>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+<!--   Results shown here
+
+
+
+
+  
+
+
+
+  
+
+   -->
+
+  <!-- Completed results end -->
+  
+<!--   <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./script.js"></script>
+</body>
+</html>
